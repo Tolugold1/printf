@@ -13,6 +13,7 @@ int (*format_conversion(char s))(va_list)
 		{'i', print_digit},
 		{'c', print_char},
 		{'s', print_string},
+		{'%', percentage},
 		{'\0', NULL}
 	};
 
