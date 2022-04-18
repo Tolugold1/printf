@@ -16,7 +16,7 @@ typedef struct fmt
 	char F;
 	int (*T)(va_list);
 } ft;
-
+int _printf(const char *format, ...);
 int _putchar(char c);
 int print_string(va_list list);
 int print_digit(va_list intlist);
