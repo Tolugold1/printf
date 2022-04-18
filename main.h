@@ -23,6 +23,6 @@ int print_digit(va_list intlist);
 int print_char(va_list charlist);
 int processINT(int i, int result);
 int (*format_conversion(char s))(va_list);
-char percentage(const char *c);
+int percentage(__attribute__((unused))va_list valist);
 int negative_num(int i);
 #endif
