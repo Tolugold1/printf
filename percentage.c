@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdarg.h>
-#include "min.h"
+#include "main.h"
 
 /**
  * percentage - function to check out for percentage in a program
