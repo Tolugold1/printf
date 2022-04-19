@@ -23,8 +23,8 @@ int (*format_conversion(char s))(va_list)
 	{
 		if (conversion_type[i].F == s)
 		{
-			return (conversion_type[i].T);
+			break;
 		}
 	}
-	return (0);
+	return (conversion_type[i].T);
 }
