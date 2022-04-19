@@ -17,7 +17,7 @@ int (*format_conversion(char s))(va_list)
 		{'\0', NULL}
 	};
 
-	int i;
+	unsigned int i;
 
 	for (i = 0; conversion_type[i].F != '\0'; i++)
 	{
