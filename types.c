@@ -14,7 +14,7 @@ int (*format_conversion(char s))(va_list)
 		{'c', print_char},
 		{'s', print_string},
 		{'%', percentage},
-		{'\0', NULL}
+		{NULL, NULL}
 	};
 
 	int i;
