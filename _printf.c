@@ -26,5 +26,6 @@ int _printf(const char *format, ...)
 		}
 	}
 	va_end(valist);
+	_putchar('\n');
 	return (result);
 }
