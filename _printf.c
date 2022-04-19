@@ -33,6 +33,11 @@ int _printf(const char *format, ...)
 		{
 			result += _putchar(format[i]);
 		}
+
+		if (!format[i])
+		{
+			return (result);
+		}
 	}
 	va_end(valist);
 	return (result);
