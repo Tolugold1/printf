@@ -17,22 +17,25 @@ int _printf(const char *format, ...)
 	{
 		return (-1);
 	}
-	for (i = 0; format[i] != '\0'; i++)
+	else
 	{
-		if (format[i] == '\0')
+		for (i = 0; format[i] != '\0'; i++)
 		{
-			break;
+			if (format[i] == '\0')
+			{
+				break;
+			}
+			else if (format[i] == '%' && format[i + 1])
+			{
+				result += (*format_conversion(format[i + 1]))(valist);
+				i++;
+			}
+			else
+			{
+				result += _putchar(format[i]);
+			}
 		}
-		else if (format[i] == '%' && format[i + 1])
-		{
-			result += (*format_conversion(format[i + 1]))(valist);
-			i++;
-		}
-		else
-		{
-			result += _putchar(format[i]);
-		}
+		va_end(valist);
+		return (result);
 	}
-	va_end(valist);
-	return (result);
-}
+}	
