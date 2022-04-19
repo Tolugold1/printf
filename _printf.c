@@ -17,9 +17,9 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '\0')
 		{
-			result = NULL;
+			break;
 		}
-		if (format[i] == '%' && format[i + 1])
+		else if (format[i] == '%' && format[i + 1])
 		{
 			result += (*format_conversion(format[i + 1]))(valist);
 			i++;
