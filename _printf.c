@@ -23,9 +23,9 @@ int _printf(const char *format, ...)
 		else
 		{
 			result += _putchar(format[i]);
+			i++;
 		}
 	}
 	va_end(valist);
-	_putchar('\n');
 	return (result);
 }
