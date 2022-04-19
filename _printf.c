@@ -15,8 +15,7 @@ int _printf(const char *format, ...)
 	va_start(valist, format);
 	if (format == NULL)
 	{
-		result += (*format_conversion(format[i + 1]))(valist);
-		return (result);
+		return (-1);
 	}
 	for (i = 0; format[i] != '\0'; i++)
 	{
