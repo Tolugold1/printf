@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list valist;
-	unsigned int i = 0;
+	unsigned int i = 0, j;
 	unsigned int result = 0;
 
 	if (format == NULL)
@@ -17,6 +17,14 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	va_start(valist, format);
+
+	for (j = 0; format[j] != '\0'; j++)
+	{
+		if (format[j] == '%' && !format[i + 1])
+		{
+			return (result);
+		}
+	}
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '\0')
