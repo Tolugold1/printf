@@ -17,11 +17,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	}
 	va_start(valist, format);
-
-	if (format[i] == '%' && format[i + 1] == '\0')
-	{
-		return (result);
-	}
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '\0')
