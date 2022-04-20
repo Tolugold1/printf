@@ -18,13 +18,18 @@ int _printf(const char *format, ...)
 	}
 	va_start(valist, format);
 
+	if (format[i] == '%' && format[i + 1] == '\0')
+	{
+		return (result);
+	}
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '\0')
 		{
 			return (result);
 		}
-		else if (format[i] == '%' && format[i + 1])
+		else if (format[i] == '%' && (format[i + 1] == 'd' || format[i + 1] == 'i' ||
+					format[i + 1] == 's' || format[i + 1] == 'c' || format[i + 1] == '%'))
 		{
 			result += (*format_conversion(format[i + 1]))(valist);
 			i++;
@@ -32,11 +37,6 @@ int _printf(const char *format, ...)
 		else
 		{
 			result += _putchar(format[i]);
-		}
-
-		if (!format[i])
-		{
-			return (result);
 		}
 	}
 	va_end(valist);
